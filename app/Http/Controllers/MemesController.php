@@ -42,7 +42,7 @@ class MemesController extends Controller
           $font->color('#fdf6e3');
           $font->align('center');
           $font->valign('bottom');
-        })->save('processed_pdf/bar'.$unique_name.'.jpg');
+        })->save('processed_meme/bar'.$unique_name.'.jpg');
 
         return response()->json(['data' => [
             'type' => 'text',
