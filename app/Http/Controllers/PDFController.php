@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Http\Controllers\Controller;
 use PDF;
+use Log;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -20,7 +21,7 @@ class PDFController extends Controller
     {
         $date = new Carbon();
         $unique_name = $date->timestamp;
-
+        Log::alert('Showing user profile for user: ');
         $data['grav_url'] = $this->get_gravatar($request->input('email'));
         $data['full_name'] = $request->input('full_name');
         $data['phone'] = $request->input('phone_number');
