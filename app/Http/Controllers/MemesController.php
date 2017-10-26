@@ -21,7 +21,7 @@ class MemesController extends Controller
     {
         $date = new Carbon();
         $unique_name = $date->timestamp;
-        
+
         $data['style'] = $request->input('style');
         $data['top_line'] = strtoupper($request->input('top_line'));
         $data['bottom_line'] = strtoupper($request->input('bottom_line'));
@@ -42,7 +42,7 @@ class MemesController extends Controller
           $font->color('#fdf6e3');
           $font->align('center');
           $font->valign('bottom');
-        })->save('processed_meme/bar'.$unique_name.'.jpg');
+        })->save('processed_pdf/bar'.$unique_name.'.jpg');
 
         return response()->json(['data' => [
             'type' => 'text',
