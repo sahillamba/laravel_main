@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('/get_joke', 'JokesController@index');
 Route::get('/make_card', 'PDFController@index');
+Route::get('/make_meme', 'MemesController@index');
